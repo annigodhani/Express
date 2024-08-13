@@ -2,7 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const app = express()
 const userRoutes = require('./routes/user.routes')
-const productRoutes = require('./routes/product.routes')
+const productRoutes = require('./routes/user.routes')
 // console.log(users) 
 
 app.use(morgan('dev'))
