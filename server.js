@@ -1,7 +1,7 @@
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
-const userRoutes = require('./routes/user.routes')
+const mongoose = require('mongoose')
 const productRoutes = require('./routes/user.routes')
 // console.log(users) 
 
@@ -15,8 +15,12 @@ app.get('/', (req, res) => {
 
 app.use("/user", userRoutes)
 
-app.use("/product", productRoutes)
-
-app.listen(1412, () => {
+app.listen(1111, () => {
+    // Database Connection 
+    mongoose
+    .connect("mongodb://127.0.0.1:2701/anni")
+    .then(() => 
+    console.log("Database Connection Established Sucess..."))
+    .catch((err) => console.log(err))
     console.log("Server Start At http://localhost:1111")
 })
