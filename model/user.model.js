@@ -6,15 +6,15 @@ const userSchema = mongoose.Schema({
         type: String
     },
     email: {
-        type: string
+        type: String
     },
     age: {
         type: Number
     },
-    hobbies: [{ type: string }],
+    hobbies: [{ type: String }],
     address: {
-        line1: string,
-        line2: string,
+        line1: String,
+        line2: String,
         pincode: Number
     }
 })
