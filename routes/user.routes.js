@@ -10,11 +10,11 @@ const {
     deleteUser
 } = require('../Controller/user.controller')
 
-userRoutes.post('/', addNewUser);
+userRoutes.post('/', addNewUser)
 
-// userRoutes.get('/', getAllUsers)
+userRoutes.get('/', getAllUsers)
 
-// userRoutes.get('/:id', getUser)
+userRoutes.get('/get-user', getUser)
 
 // userRoutes.put("/:id", replaceUser)
 
