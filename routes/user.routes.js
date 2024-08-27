@@ -1,15 +1,15 @@
-const express = require('express');
-const userRoutes = express.Router();
+const express = require('express')
+const userRoutes = express.Router()
 
 const {
-   registerUser , loginUser , getProfile
-} = require('../controller/user.controller');
-const {verifyToken} = require('../helpers/verifyToken')
+   registerUser, loginUser, getProfile
+} = require('../controller/user.controller')
+const { verifyToken } = require('../helpers/verifyToken')
 
-userRoutes.post('/register' , registerUser);
+userRoutes.post('/register', registerUser)
 
-userRoutes.post('/loginUser' , loginUser);
+userRoutes.post('/loginUser', loginUser)
 
-userRoutes.get('/profile', verifyToken,getProfile);
+userRoutes.get('/profile', verifyToken, getProfile)
 
-module.exports = userRoutes;
+module.exports = userRoutes

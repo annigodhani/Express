@@ -1,14 +1,14 @@
 const mongoose = require('mongoose')
 
- const userSchema = mongoose.Schema({
-    firstName: String ,       // short heand method
-    lastName:{
-         type: String,
-    },
-    email:{
+const userSchema = mongoose.Schema({
+    firstName: String,       // short heand method
+    lastName: {
         type: String,
     },
-    password:{
+    email: {
+        type: String,
+    },
+    password: {
         type: String,
     },
     mobileNo: {
@@ -17,21 +17,22 @@ const mongoose = require('mongoose')
     profileImage: {
         type: String,
     },
-    age:{
-        type:Number,
+    age: {
+        type: Number,
     },
-    address:{
-        line1:String,
-        line2:String,
-        pincode:Number
+    address: {
+        line1: String,
+        line2: String,
+        pincode: Number
     },
-    isDelete:{
-        type:Boolean,
-        default:false
+    isDelete: {
+        type: Boolean,
+        default: false
     }
- },{
-    versionKey:false,
-    timestamps:true
- });
+},
+    {
+        versionKey: false,
+        timestamps: true
+    })
 
- module.exports = mongoose.model('users' ,userSchema);
+module.exports = mongoose.model('users', userSchema)

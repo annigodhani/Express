@@ -8,10 +8,10 @@ exports.registerUser = async (req, res) => {
         if (user) {
             return res.json({ message: "User Already Exists..." })
         }
-        let hashpassword = await bcrypt.hash(req.body.password,10)
+        let hashpassword = await bcrypt.hash(req.body.password, 10)
         // console.log(hashpassword)
-        user = await User.create({...req.body, password:hashpassword})
-        res.status(201).json({user, message:"Register Successfully..." })
+        user = await User.create({ ...req.body, password: hashpassword })
+        res.status(201).json({ user, message: "Register Successfully..." })
     }
     catch (err) {
         console.log(err)
@@ -31,7 +31,7 @@ exports.loginUser = async (req, res) => {
             return res.json({ message: "Email Or Password Not Match..." })
         }
 
-        let token = await jwt.sign({userId: user._id} , process.env.JWT_SECRET);    
+        let token = await jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
         res.status(200).json({ message: "Login Success...", token });
     }
     catch (err) {
@@ -40,7 +40,7 @@ exports.loginUser = async (req, res) => {
     }
 };
 
-exports.getProfile = async (req,res) => {
+exports.getProfile = async (req, res) => {
     try {
         res.json(req.user);
     } catch (err) {
